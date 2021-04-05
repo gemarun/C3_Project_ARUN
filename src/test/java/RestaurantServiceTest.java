@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
 
@@ -16,11 +16,11 @@ class RestaurantServiceTest {
     @Test
     public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException {
         //WRITE UNIT TEST CASE HERE
-    LocalTime openingTime = LocalTime.parse("10:30:00");
-    LocalTime closingTime = LocalTime.parse("22:00:00");
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
         service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
-    assertNull(service.findRestaurantByName("Amelie's cafe"));
-}
+        assertNotNull(service.findRestaurantByName("Amelie's cafe"));
+    }
 
     //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content
     @Test
